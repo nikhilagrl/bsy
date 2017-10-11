@@ -1,0 +1,159 @@
+package com.microservice.model;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ExpenseEnvelope {
+
+	private String allocatedAmount;
+	private String amountType;
+	private String billDisplayMessage;
+	private String billStatus;
+	private String dueAmount;
+	private String dueDate;
+	private String dueDays;
+	private String envelopeKeyName;
+	private String envelopeName;
+	private String frequency;
+
+	private String payeeType;
+	private String payOnDate;
+	private String remaingingDueAmount;
+	private boolean superPayEligible;
+	private String type;
+
+	@Autowired
+	private PayeeDetails payeeDetails;
+
+	
+	
+	public PayeeDetails getPayeeDetails() {
+		return payeeDetails;
+	}
+
+	public void setPayeeDetails(PayeeDetails payeeDetails) {
+		this.payeeDetails = payeeDetails;
+	}
+
+	public String getPayeeType() {
+		return payeeType;
+	}
+
+	public void setPayeeType(String payeeType) {
+		this.payeeType = payeeType;
+	}
+
+	public String getAllocatedAmount() {
+		return allocatedAmount;
+	}
+
+	public void setAllocatedAmount(String allocatedAmount) {
+		this.allocatedAmount = allocatedAmount;
+	}
+
+	public String getAmountType() {
+		return amountType;
+	}
+
+	public void setAmountType(String amountType) {
+		this.amountType = amountType;
+	}
+
+	public String getBillDisplayMessage() {
+		return billDisplayMessage;
+	}
+
+	public void setBillDisplayMessage(String billDisplayMessage) {
+		this.billDisplayMessage = billDisplayMessage;
+	}
+
+	public String getBillStatus() {
+		return billStatus;
+	}
+
+	public void setBillStatus(String billStatus) {
+		this.billStatus = billStatus;
+	}
+
+	public String getDueAmount() {
+		return dueAmount;
+	}
+
+	public void setDueAmount(String dueAmount) {
+		this.dueAmount = dueAmount;
+	}
+
+	public String getDueDate() {
+		return dueDate;
+	}
+
+	public void setDueDate(String dueDate) {
+		this.dueDate = dueDate;
+	}
+
+	public String getDueDays() {
+		return dueDays;
+	}
+
+	public void setDueDays(String dueDays) {
+		this.dueDays = dueDays;
+	}
+
+	public String getEnvelopeKeyName() {
+		return envelopeKeyName;
+	}
+
+	public void setEnvelopeKeyName(String envelopeKeyName) {
+		this.envelopeKeyName = envelopeKeyName;
+	}
+
+	public String getEnvelopeName() {
+		return envelopeName;
+	}
+
+	public void setEnvelopeName(String envelopeName) {
+		this.envelopeName = envelopeName;
+	}
+
+	public String getFrequency() {
+		return frequency;
+	}
+
+	public void setFrequency(String frequency) {
+		this.frequency = frequency;
+	}
+
+	public String getPayOnDate() {
+		return payOnDate;
+	}
+
+	public void setPayOnDate(String payOnDate) {
+		this.payOnDate = payOnDate;
+	}
+
+	public String getRemaingingDueAmount() {
+		return remaingingDueAmount;
+	}
+
+	public void setRemaingingDueAmount(String remaingingDueAmount) {
+		this.remaingingDueAmount = remaingingDueAmount;
+	}
+
+	public boolean isSuperPayEligible() {
+		return superPayEligible;
+	}
+
+	public void setSuperPayEligible(boolean superPayEligible) {
+		this.superPayEligible = superPayEligible;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+}

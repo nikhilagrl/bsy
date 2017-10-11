@@ -1,0 +1,68 @@
+package com.m23.addcategoriesservice.controller;
+import java.util.logging.Logger;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.m23.addcategoriesservice.model.ExpenseCategory;
+import com.m23.addcategoriesservice.model.ExpenseCategoryRequest;
+import com.m23.addcategoriesservice.model.ExpenseCategoryResponse;
+
+
+
+@RestController
+@RequestMapping(value = AddCategoryController.CONTRACT_BASE_URI)
+public class AddCategoryController {
+
+	public static final String CONTRACT_BASE_URI = "/cashflow/v1/reserve/category";
+	protected Logger logger = Logger.getLogger(AddCategoryController.class.getName());
+
+	@Autowired
+	ExpenseCategory expenseCategory;
+
+	@Autowired
+	ExpenseCategoryRequest expenseCategoryRequest;
+
+	@Autowired
+	ExpenseCategoryResponse expenseCategoryResponse;
+
+	@RequestMapping(value = "/categories", method = RequestMethod.POST)
+	public ResponseEntity<Object> addEnvelope(@RequestBody ExpenseCategoryRequest expenseCategoryRequest, HttpServletResponse response) {
+
+		expenseCategory();
+		expenseCategoryRequest(expenseCategoryRequest);
+		expenseCategoryResponse();
+
+		return new ResponseEntity<Object>(expenseCategoryResponse, HttpStatus.OK);
+
+	}
+
+	private void expenseCategoryResponse() {
+
+		expenseCategoryResponse.setExpenseCategory(expenseCategory);
+		expenseCategoryResponse.setViewName("");
+	}
+
+	private void expenseCategoryRequest(ExpenseCategoryRequest expenseCategoryRequest) {
+		expenseCategoryRequest.setName("name");
+	}
+
+	private void expenseCategory() {
+		expenseCategory.setName("name");
+		expenseCategory.setPriority("priority");
+		expenseCategory.setType("type");
+		expenseCategory.setUserdefined(true);
+		expenseCategory.setUtilized(true);
+	}
+
+}

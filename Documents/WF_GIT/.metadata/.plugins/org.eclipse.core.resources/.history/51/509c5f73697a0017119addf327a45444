@@ -1,0 +1,23 @@
+package com.example.demo;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+
+@SpringBootApplication
+@ConfigurationProperties("application.properties")
+public class DemoApplication {
+
+	@Value("${URL1}")
+	private String URL1;
+
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
+
+		System.out.println("URL===" + URL1);
+		System.out.println("URL===" + URL1);
+
+	}
+}

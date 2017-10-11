@@ -1,0 +1,54 @@
+package com.m23.addcategoriesservice;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class ExpenseCategory {
+
+	private String name;
+	private String priority;
+	private String type;
+	private boolean userdefined;
+	private boolean utilized;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPriority() {
+		return priority;
+	}
+
+	public void setPriority(String priority) {
+		this.priority = priority;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public boolean isUserdefined() {
+		return userdefined;
+	}
+
+	public void setUserdefined(boolean userdefined) {
+		this.userdefined = userdefined;
+	}
+
+	public boolean isUtilized() {
+		return utilized;
+	}
+
+	public void setUtilized(boolean utilized) {
+		this.utilized = utilized;
+	}
+
+}

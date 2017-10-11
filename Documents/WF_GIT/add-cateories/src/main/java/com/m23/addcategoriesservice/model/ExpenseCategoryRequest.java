@@ -1,0 +1,19 @@
+package com.m23.addcategoriesservice.model;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class ExpenseCategoryRequest {
+
+	
+	private String name;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+}

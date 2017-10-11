@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+		<list key="ciManagementUrl">
+		</list>
+		<list key="ciManagementSystem">
+		</list>
+		<list key="issueManagementSystem">
+		</list>
+		<list key="issueManagementUrl">
+		</list>
+	</section>
+	<section name="MavenProjectImportWizardPage">
+		<list key="rootDirectory">
+			<item value="/Users/nikhilagrawal/Documents/WF_GIT/add-categoryies"/>
+			<item value="/Users/nikhilagrawal/Documents/WF_GIT/add-envelope copy"/>
+			<item value="/Users/nikhilagrawal/Documents/WF_GIT/add-Payee"/>
+			<item value="/Users/nikhilagrawal/Documents/WF_GIT/add-categories copy"/>
+			<item value="/Users/nikhilagrawal/Documents/WF_GIT/AddPayee"/>
+			<item value="/Users/nikhilagrawal/Documents/WF_GIT/get-envelope copy"/>
+			<item value="/Users/nikhilagrawal/Documents/WF_GIT/add-envelope"/>
+			<item value="/Users/nikhilagrawal/Documents/WF_GIT/add-categories"/>
+			<item value="/Users/nikhilagrawal/Documents/WF_GIT/get-envelope copy 2"/>
+			<item value="/Users/nikhilagrawal/Documents/WF_GIT/get-categories"/>
+			<item value="/Users/nikhilagrawal/Documents/WF_GIT/loginservice"/>
+			<item value="/Users/nikhilagrawal/Downloads/try-spring-boot-config-master"/>
+			<item value="/Users/nikhilagrawal/Downloads/gs-consuming-rest-master1"/>
+			<item value="/Users/nikhilagrawal/Documents/WF_GIT/gs-consuming-rest"/>
+			<item value="/Users/nikhilagrawal/Documents/WF_GIT/get-envelopes"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+</section>

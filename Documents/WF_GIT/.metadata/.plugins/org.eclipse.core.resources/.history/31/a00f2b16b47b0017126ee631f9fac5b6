@@ -1,0 +1,18 @@
+package com.microservice.model;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class ViewName {
+
+	private String viewName;
+
+	public String getViewName() {
+		return viewName;
+	}
+
+	public void setViewName(String viewName) {
+		this.viewName = viewName;
+	}
+
+}

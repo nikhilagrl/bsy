@@ -1,0 +1,132 @@
+package com.m23.addprivatepayeeservice.controller;
+
+import java.util.logging.Logger;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CookieValue;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.microservice.model.ExpenseEnvelope;
+import com.microservice.model.PayeeDetails;
+import com.microservice.model.PrivatePayeeRequest;
+import com.microservice.model.PrivatePayeeResponse;
+import com.microservice.model.ViewName;
+
+@RestController
+@RequestMapping(value = addPrivatePayeeController.CONTRACT_BASE_URI)
+public class addPrivatePayeeController {
+
+	public static final String CONTRACT_BASE_URI = "/cashflow/v1/reserve/envelope";
+	protected Logger logger = Logger.getLogger(addPrivatePayeeController.class.getName());
+
+	@Autowired
+	PayeeDetails payeeDetails;
+
+	@Autowired
+	ExpenseEnvelope expenseEnvelope;
+
+	@Autowired
+	ViewName viewName;
+
+	@Autowired
+	PrivatePayeeRequest privatePayeeRequest;
+
+	@Autowired
+	PrivatePayeeResponse privatePayeeResponse;
+
+	@RequestMapping(value = "/privatePayee", method = RequestMethod.POST)
+	public ResponseEntity<Object> addEnvelope(@RequestBody PrivatePayeeRequest expenseEnvelopeRequest,
+			@CookieValue(value = "OREP_COOKIE", defaultValue = "0") Long OREP_COOKIE, HttpServletResponse response)
+	{
+
+		payeeDetails();
+		expenseEnvelope();
+		viewName();
+		PrivatePayeeRequest();
+		privatePayeeResponse();
+
+		cookieValue(OREP_COOKIE, response);
+
+		return new ResponseEntity<Object>(privatePayeeResponse, HttpStatus.OK);
+
+	}
+
+	private void privatePayeeResponse() {
+		privatePayeeResponse.setExpenseEnvelope(expenseEnvelope);
+		privatePayeeResponse.setViewName(viewName);
+
+	}
+
+	private void PrivatePayeeRequest() {
+
+		privatePayeeRequest.setAccountNumber("accountNumber");
+		privatePayeeRequest.setAccountNumberSelect("accountNumberSelect");
+		privatePayeeRequest.setAddress1("address1");
+		privatePayeeRequest.setAddress2("address2");
+		privatePayeeRequest.setBillFirstName("billFirstName");
+		privatePayeeRequest.setBillLastName("billLastName");
+		privatePayeeRequest.setBillNameType("billNameType");
+		privatePayeeRequest.setCity("city");
+		privatePayeeRequest.setNickName("nickName");
+		privatePayeeRequest.setPayeeName("payeeName");
+		privatePayeeRequest.setPhoneNumber("phoneNumber");
+		privatePayeeRequest.setState("state");
+		privatePayeeRequest.setZip("zip");
+
+	}
+
+	private void cookieValue(Long OREP_COOKIE, HttpServletResponse response) {
+		OREP_COOKIE++;
+		Cookie cookie = new Cookie("OREP_COOKIE", OREP_COOKIE.toString());
+		response.addCookie(cookie);
+	}
+
+	private void viewName() {
+		viewName.setViewName("viewName");
+	}
+
+	private void payeeDetails() {
+		payeeDetails.setAccountNumber("accountNumber");
+		payeeDetails.setAddress1("accountNumber1");
+		payeeDetails.setAddress2("accountNumber2");
+		payeeDetails.setBillFirstName("accountNumber");
+		payeeDetails.setBillLastName("accountNumber");
+		payeeDetails.setBillpayDays("accountNumber");
+		payeeDetails.setCity("accountNumber");
+		payeeDetails.setState("state");
+		payeeDetails.setEbillActive(true);
+		payeeDetails.setEbillAvailable(true);
+		payeeDetails.setEbillEligible(true);
+		payeeDetails.setEbillTermsDisplayInternal(true);
+		payeeDetails.setNewEbillAvailable(true);
+		payeeDetails.setPayeeLoaded(true);
+		payeeDetails.setPayeeName("payeeName");
+		payeeDetails.setPhoneNumber("phoneNumber");
+	}
+
+	private void expenseEnvelope() {
+		expenseEnvelope.setAllocatedAmount("allocatedAmount");
+		expenseEnvelope.setAmountType("amountType");
+		expenseEnvelope.setBillDisplayMessage("billDisplayMessage");
+		expenseEnvelope.setBillStatus("billStatus");
+		expenseEnvelope.setDueAmount("dueAmount");
+		expenseEnvelope.setDueDate("dueDate");
+		expenseEnvelope.setDueDays("dueDays");
+		expenseEnvelope.setEnvelopeKeyName("envelopeKeyName");
+		expenseEnvelope.setEnvelopeName("envelopeName");
+		expenseEnvelope.setFrequency("frequency");
+		expenseEnvelope.setPayOnDate("payOnDate");
+		expenseEnvelope.setRemaingingDueAmount("remaingingDueAmount");
+		expenseEnvelope.setSuperPayEligible(true);
+		expenseEnvelope.setType("type");
+
+		expenseEnvelope.setPayeeDetails(payeeDetails);
+	}
+
+}

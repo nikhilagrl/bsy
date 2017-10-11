@@ -1,0 +1,126 @@
+package com.microservice.model;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class PrivatePayeeRequest {
+
+	private String payeeName;
+	private String nickName;
+	private String accountNumberSelect;
+	private String accountNumber;
+	private String address1;
+	private String address2;
+	private String city;
+	private String state;
+	private String zip;
+	private String phoneNumber;
+	private String billNameType;
+	private String billFirstName;
+	private String billLastName;
+
+	public String getPayeeName() {
+		return payeeName;
+	}
+
+	public void setPayeeName(String payeeName) {
+		this.payeeName = payeeName;
+	}
+
+	public String getNickName() {
+		return nickName;
+	}
+
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
+
+	public String getAccountNumberSelect() {
+		return accountNumberSelect;
+	}
+
+	public void setAccountNumberSelect(String accountNumberSelect) {
+		this.accountNumberSelect = accountNumberSelect;
+	}
+
+	public String getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public String getAddress1() {
+		return address1;
+	}
+
+	public void setAddress1(String address1) {
+		this.address1 = address1;
+	}
+
+	public String getAddress2() {
+		return address2;
+	}
+
+	public void setAddress2(String address2) {
+		this.address2 = address2;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getZip() {
+		return zip;
+	}
+
+	public void setZip(String zip) {
+		this.zip = zip;
+	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getBillNameType() {
+		return billNameType;
+	}
+
+	public void setBillNameType(String billNameType) {
+		this.billNameType = billNameType;
+	}
+
+	public String getBillFirstName() {
+		return billFirstName;
+	}
+
+	public void setBillFirstName(String billFirstName) {
+		this.billFirstName = billFirstName;
+	}
+
+	public String getBillLastName() {
+		return billLastName;
+	}
+
+	public void setBillLastName(String billLastName) {
+		this.billLastName = billLastName;
+	}
+
+}

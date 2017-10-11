@@ -1,0 +1,28 @@
+package com.example.demo;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+
+@SpringBootApplication
+@ConfigurationProperties("application.properties")
+public class DemoApplication {
+
+	@Value("${application.URL.path}")
+	private static String URL;
+
+	 @Value("${thread-pool}")
+	    private int url;
+	
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
+		
+		System.out.println("URL==="+URL);
+		System.out.println("URL===");
+
+
+		
+	}
+}

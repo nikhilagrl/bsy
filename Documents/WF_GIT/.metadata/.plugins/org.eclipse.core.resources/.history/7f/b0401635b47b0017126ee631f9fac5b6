@@ -1,0 +1,31 @@
+package com.m23.addprivatepayeeservice.model.copy;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class PrivatePayeeResponse {
+
+	@Autowired
+	private ExpenseEnvelope expenseEnvelope;
+	
+	@Autowired
+	private ViewName viewName;
+
+	public ExpenseEnvelope getExpenseEnvelope() {
+		return expenseEnvelope;
+	}
+
+	public void setExpenseEnvelope(ExpenseEnvelope expenseEnvelope) {
+		this.expenseEnvelope = expenseEnvelope;
+	}
+
+	public ViewName getViewName() {
+		return viewName;
+	}
+
+	public void setViewName(ViewName viewName) {
+		this.viewName = viewName;
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.m23.loginservice;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class AddPrivatePayeeApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(AddPrivatePayeeApplication.class, args);
+	}
+}
